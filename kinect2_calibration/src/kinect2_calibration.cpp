@@ -743,7 +743,7 @@ void calibrateExtrinsics()
 #if CV_MAJOR_VERSION == 2
         error = cv::stereoCalibrate(pointsBoard, pointsIr, pointsColor, cameraMatrixIr, distortionIr, cameraMatrixColor, distortionColor, sizeColor,
                                     rotation, translation, essential, fundamental, termCriteria, cv::CALIB_FIX_INTRINSIC);
-#elif CV_MAJOR_VERSION == 3
+#elif CV_MAJOR_VERSION >= 3
         error = cv::stereoCalibrate(pointsBoard, pointsIr, pointsColor, cameraMatrixIr, distortionIr, cameraMatrixColor, distortionColor, sizeColor,
                                     rotation, translation, essential, fundamental, cv::CALIB_FIX_INTRINSIC, termCriteria);
 #endif
